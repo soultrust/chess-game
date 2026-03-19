@@ -1,5 +1,11 @@
 // src/components/GameStatus.jsx
-function GameStatus({ game }) {
+import { type Chess } from "chess.js";
+
+type GameStatusProps = {
+  game: Chess;
+};
+
+function GameStatus({ game }: GameStatusProps) {
   const turn = game.turn() === "w" ? "White" : "Black";
 
   if (game.isCheckmate()) {
